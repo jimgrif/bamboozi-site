@@ -2,47 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Bamboozi</title>
+  <title>Bamboozi Consulting | Microsoft Cloud & M365 Consultancy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Bamboozi" />
+  <meta name="description"
+        content="Bamboozi Consulting is a Microsoft-focused technical consultancy specialising in Azure, .NET, Microsoft 365, and SharePoint Online." />
 
   <style>
-    html, body {
+    :root {
+      --bg: #0f172a;
+      --fg: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --card: #020617;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                    Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
     }
 
-    .container {
-      min-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header {
+      padding: 4rem 1.5rem 3rem;
       text-align: center;
-      padding: 2rem;
     }
 
-    h1 {
+    header h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
     }
 
-    p {
+    header p {
       font-size: 1.25rem;
-      opacity: 0.85;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card div {
+      padding: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div>
-      <h1>Bamboozi</h1>
-      <p>Coming soon</p>
+
+  <header>
+    <h1>Bamboozi Consulting</h1>
+    <p>
+      Microsoft-focused technical consultancy specialising in Azure, .NET,
+      Microsoft 365, and SharePoint Online.
+    </p>
+  </header>
+
+  <section>
+    <h2>What we do</h2>
+
+    <div class="grid">
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+          alt="Cloud architecture" />
+        <div>
+          <h3>Solution Architecture</h3>
+          <p>
+            Designing secure, scalable cloud-native solutions using Azure PaaS,
+            modern .NET, and Microsoft 365.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+          alt="Software development" />
+        <div>
+          <h3>Cloud & Application Development</h3>
+          <p>
+            Building and integrating applications with C#, ASP.NET, Azure
+            Functions, Logic Apps, and APIs.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"
+          alt="Collaboration" />
+        <div>
+          <h3>Microsoft 365 & SharePoint</h3>
+          <p>
+            Information architecture, governance, automation, and lifecycle
+            management across SharePoint Online and M365.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section>
+    <h2>Core capabilities</h2>
+    <div class="grid">
+      <div class="card">
+        <div>
+          <ul>
+            <li>Azure PaaS and Microsoft 365 integration</li>
+            <li>Document and records lifecycle automation</li>
+            <li>Power Automate, Azure Functions, Logic Apps</li>
+            <li>DevOps and infrastructure as code</li>
+            <li>Technical leadership and delivery support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      For enquiries, contact
+      <a href="#" id="email-link">hello (at) bamboozi.net</a>
+    </p>
+    <p>
+      © <span id="year"></span> Bamboozi Consulting
+    </p>
+  </footer>
+
+  <script>
+    const user = "hello";
+    const domain = "bamboozi.net";
+    const link = document.getElementById("email-link");
+    link.href = "mailto:" + user + "@" + domain;
+    link.textContent = user + "@" + domain;
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
